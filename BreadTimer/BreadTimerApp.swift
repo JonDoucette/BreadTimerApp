@@ -2,7 +2,7 @@
 //  BreadTimerApp.swift
 //  BreadTimer
 //
-//  Created by Kelsey Maley on 12/27/23.
+//  Created by Jon Doucette on 12/27/23.
 //
 
 import SwiftUI
@@ -11,7 +11,7 @@ import SwiftUI
 struct BreadTimerApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView().preferredColorScheme(.light)
         }
     }
 }
