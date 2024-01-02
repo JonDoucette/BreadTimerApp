@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DF398AF32B43182F00F4F2DB /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF398AF22B43182F00F4F2DB /* MainView.swift */; };
 		DF398AF52B434DE000F4F2DB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF398AF42B434DE000F4F2DB /* SettingsView.swift */; };
 		DF398AF72B434E0B00F4F2DB /* NotificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF398AF62B434E0B00F4F2DB /* NotificationListView.swift */; };
 		DF398AF92B44D08100F4F2DB /* BakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF398AF82B44D08100F4F2DB /* BakeView.swift */; };
@@ -42,7 +41,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DF398AF22B43182F00F4F2DB /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		DF398AF42B434DE000F4F2DB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DF398AF62B434E0B00F4F2DB /* NotificationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.swift; sourceTree = "<group>"; };
 		DF398AF82B44D08100F4F2DB /* BakeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BakeView.swift; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 				DF398AF82B44D08100F4F2DB /* BakeView.swift */,
 				DFAE84132B3C8BC80055EFB1 /* ContentView.swift */,
 				DFAE843F2B3DFE950055EFB1 /* BreadOptionView.swift */,
-				DF398AF22B43182F00F4F2DB /* MainView.swift */,
 				DF398AF42B434DE000F4F2DB /* SettingsView.swift */,
 				DF398AF62B434E0B00F4F2DB /* NotificationListView.swift */,
 			);
@@ -299,7 +296,6 @@
 			files = (
 				DFAE84422B3E211E0055EFB1 /* EnumHelpers.swift in Sources */,
 				DF398AF52B434DE000F4F2DB /* SettingsView.swift in Sources */,
-				DF398AF32B43182F00F4F2DB /* MainView.swift in Sources */,
 				DFAE84462B3F4F460055EFB1 /* BreadHandler.swift in Sources */,
 				DFAE84142B3C8BC80055EFB1 /* ContentView.swift in Sources */,
 				DF398AF72B434E0B00F4F2DB /* NotificationListView.swift in Sources */,
@@ -467,10 +463,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BreadTimer/Preview Content\"";
-				DEVELOPMENT_TEAM = YKV38YC96B;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -486,6 +483,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = JonDoucette.BreadTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -497,10 +495,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"BreadTimer/Preview Content\"";
-				DEVELOPMENT_TEAM = YKV38YC96B;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -516,6 +515,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = JonDoucette.BreadTimer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
