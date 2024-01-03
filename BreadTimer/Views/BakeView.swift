@@ -56,30 +56,44 @@ struct BakeView: View {
             }
             BreadOptionView(baker: $baker)
             Spacer()
-                HStack(){
-                    Text("Total Time: ").fontWeight(/*@START_MENU_TOKEN@*/.bold/*@END_MENU_TOKEN@*/)
-                    Text("\(baker.totalTime()) hours")
-                }
+            HStack(){
+                Text("Total Time: ").fontWeight(.bold)
+                Text("\(baker.totalTime()) hours")
+            }
             HStack(){
                 Text("Estimated Start Time: ")
                 
                 Text("\(dateFormatter.string(from: baker.subtractedDate))")
-
-            }
-
                 
-                Button("Schedule Notifications"){
-                    baker.prepareNotifications(notify: notify)
-                }
-                .foregroundStyle(.white)
-                .frame(width: 200, height: 50)
-                .background(accentColor)
-                .cornerRadius(12)
-                Button("Request Permissions"){
-                    notify.requestPermission()
-                    notify.clearNotifications()
-                }.foregroundStyle(.blue)
-            }.padding()
+            }
+            
+            
+            Button("Schedule Notifications"){
+                baker.prepareNotifications(notify: notify)
+            }
+            .foregroundStyle(.white)
+            .frame(width: 200, height: 50)
+            .background(accentColor)
+            .cornerRadius(12)
+
+        }.onChange(of: baker.selectedDate, {oldValue, newValue in
+            if true {
+                let calendar = Calendar.current
+                let bakeTime = baker.calculateTimeToBake()
+                
+                let integerHours = Int(bakeTime)
+                let fractionalHours = bakeTime - Float(integerHours)
+                let minutes = Int(fractionalHours * 60)
+                
+                var dateComponents = DateComponents()
+                dateComponents.hour = -integerHours
+                dateComponents.minute = -minutes
+                
+                let newDate = calendar.date(byAdding: dateComponents, to: baker.selectedDate)
+                baker.subtractedDate = newDate ?? Date()
+            }
+        })
+        .padding()
                 .onChange(of: baker.calculateTimeToBake(), { oldValue, newValue in
                     if true {
                         let calendar = Calendar.current
@@ -96,7 +110,8 @@ struct BakeView: View {
                         let newDate = calendar.date(byAdding: dateComponents, to: baker.selectedDate)
                         baker.subtractedDate = newDate ?? Date()
                     }
-                }).background(Color(red:252/255, green: 235/255, blue: 157/255))
+                }
+                ).background(Color(red:252/255, green: 235/255, blue: 157/255))
         }
     }
 

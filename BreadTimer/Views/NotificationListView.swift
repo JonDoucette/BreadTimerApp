@@ -25,7 +25,6 @@ struct NotificationListView: View {
                 Text("Body: \(notification.content.body)")
                 if let trigger = notification.trigger as? UNCalendarNotificationTrigger {
                     let triggerDate = trigger.nextTriggerDate()
-                    
                     if let date = triggerDate {
                         Text("Scheduled Time: \(dateFormatter.string(from: date))")
                             .font(.footnote)

@@ -9,6 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @State private var pendingNotifications: [UNNotificationRequest] = []
+    let notify = NotificationHandler()
 
     
     func fetchPendingNotifications() {
@@ -28,7 +29,10 @@ struct SettingsView: View {
                         .background(Color.blue)
                         .foregroundColor(.white)
                         .cornerRadius(8)
-                }
+                }.padding()
+                Button("Clear Notifications"){
+                    notify.clearNotifications()
+                }.foregroundStyle(.blue)
             }
             .onAppear {
                 fetchPendingNotifications()

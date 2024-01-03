@@ -14,8 +14,8 @@ class BreadHandler {
     //Times
     var stretchTime = 30
     var stretchInterval = 1
-    var bulkTime = 12
-    var proofTime = 24
+    var bulkTime: Double = 12.0
+    var proofTime: Double = 24.0
     var ovenTime = 45
     var selectedDate = Date()
     var subtractedDate = Date()
@@ -38,8 +38,8 @@ class BreadHandler {
         let startDate = subtractedDate // 1PM
         
         let stretchAndFoldDate = calendar.date(byAdding: .minute, value: stretchTime*stretchInterval, to: startDate) ?? startDate //1:30PM
-        let proofDate = calendar.date(byAdding: .minute, value: bulkTime*60, to: stretchAndFoldDate)!//3:30PM
-        let ovenDate = calendar.date(byAdding: .minute, value: proofTime*60, to: proofDate)! //4:30
+        let proofDate = calendar.date(byAdding: .minute, value: Int(bulkTime*60.0), to: stretchAndFoldDate)!//3:30PM
+        let ovenDate = calendar.date(byAdding: .minute, value: Int(proofTime*60.0), to: proofDate)! //4:30
         let completionDate = selectedDate
         
         print(startDate)

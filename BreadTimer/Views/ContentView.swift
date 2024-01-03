@@ -21,12 +21,13 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
         TabView {
+//            BakeView()
+//                .tabItem { Label("Breads", systemImage: "list.bullet.circle") }
             BakeView()
                 .tabItem {
                     Label("Bake", systemImage: "oven")
                 }
 
-            
             SettingsView()
                 .tabItem {
                     Label("Settings", systemImage: "gear.circle")
