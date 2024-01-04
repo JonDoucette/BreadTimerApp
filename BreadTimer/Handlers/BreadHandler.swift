@@ -10,7 +10,7 @@ import Observation
 
 @Observable
 class BreadHandler {
-    
+
     //Times
     var stretchTime = 30
     var stretchInterval = 1
@@ -19,7 +19,7 @@ class BreadHandler {
     var ovenTime = 45
     var selectedDate = Date()
     var subtractedDate = Date()
-    
+        
     func printValues(){
         print("Stretch Time: \(stretchTime)")
         print("Stretch Interval: \(stretchInterval)")
@@ -35,18 +35,14 @@ class BreadHandler {
         
         let calendar = Calendar.current
         
+        let bufferTime = UserDefaults.standard.integer(forKey: "BufferTime")
+        
         let startDate = subtractedDate // 1PM
         
-        let stretchAndFoldDate = calendar.date(byAdding: .minute, value: stretchTime*stretchInterval, to: startDate) ?? startDate //1:30PM
-        let proofDate = calendar.date(byAdding: .minute, value: Int(bulkTime*60.0), to: stretchAndFoldDate)!//3:30PM
-        let ovenDate = calendar.date(byAdding: .minute, value: Int(proofTime*60.0), to: proofDate)! //4:30
+        let stretchAndFoldDate = calendar.date(byAdding: .minute, value: stretchTime*stretchInterval+bufferTime, to: startDate) ?? startDate //1:30PM
+        let proofDate = calendar.date(byAdding: .minute, value: Int(bulkTime*60.0)+bufferTime, to: stretchAndFoldDate)!//3:30PM
+        let ovenDate = calendar.date(byAdding: .minute, value: Int(proofTime*60.0)+bufferTime, to: proofDate)! //4:30
         let completionDate = selectedDate
-        
-        print(startDate)
-        print(stretchAndFoldDate)
-        print(proofDate)
-        print(ovenDate)
-        print(completionDate)
         
         notify.sendNotification(
             date: startDate,
@@ -105,7 +101,9 @@ class BreadHandler {
         let bulkHour: Float = Float(bulkTime)
         let proofHour: Float = Float(proofTime)
         let ovenHour: Float = Float(ovenTime)/60.0
-        return(stretchHour + bulkHour + proofHour + ovenHour)
+        let bufferCount: Float = Float(3+stretchInterval)
+        let totalBuffer: Float = (Float(UserDefaults.standard.integer(forKey: "BufferTime")) * bufferCount)/60.0
+        return(stretchHour + bulkHour + proofHour + ovenHour + totalBuffer)
     }
     
     func resetToDefaults(){

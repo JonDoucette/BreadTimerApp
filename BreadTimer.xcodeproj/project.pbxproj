@@ -10,6 +10,7 @@
 		DF398AF52B434DE000F4F2DB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF398AF42B434DE000F4F2DB /* SettingsView.swift */; };
 		DF398AF72B434E0B00F4F2DB /* NotificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF398AF62B434E0B00F4F2DB /* NotificationListView.swift */; };
 		DF398AF92B44D08100F4F2DB /* BakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF398AF82B44D08100F4F2DB /* BakeView.swift */; };
+		DF398AFB2B46244E00F4F2DB /* BufferView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF398AFA2B46244E00F4F2DB /* BufferView.swift */; };
 		DFAE84122B3C8BC80055EFB1 /* BreadTimerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAE84112B3C8BC80055EFB1 /* BreadTimerApp.swift */; };
 		DFAE84142B3C8BC80055EFB1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DFAE84132B3C8BC80055EFB1 /* ContentView.swift */; };
 		DFAE84162B3C8BCA0055EFB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DFAE84152B3C8BCA0055EFB1 /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		DF398AF42B434DE000F4F2DB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DF398AF62B434E0B00F4F2DB /* NotificationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.swift; sourceTree = "<group>"; };
 		DF398AF82B44D08100F4F2DB /* BakeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BakeView.swift; sourceTree = "<group>"; };
+		DF398AFA2B46244E00F4F2DB /* BufferView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BufferView.swift; sourceTree = "<group>"; };
 		DFAE840E2B3C8BC80055EFB1 /* BreadTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BreadTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DFAE84112B3C8BC80055EFB1 /* BreadTimerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreadTimerApp.swift; sourceTree = "<group>"; };
 		DFAE84132B3C8BC80055EFB1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -151,6 +153,7 @@
 				DFAE843F2B3DFE950055EFB1 /* BreadOptionView.swift */,
 				DF398AF42B434DE000F4F2DB /* SettingsView.swift */,
 				DF398AF62B434E0B00F4F2DB /* NotificationListView.swift */,
+				DF398AFA2B46244E00F4F2DB /* BufferView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 			files = (
 				DFAE84422B3E211E0055EFB1 /* EnumHelpers.swift in Sources */,
 				DF398AF52B434DE000F4F2DB /* SettingsView.swift in Sources */,
+				DF398AFB2B46244E00F4F2DB /* BufferView.swift in Sources */,
 				DFAE84462B3F4F460055EFB1 /* BreadHandler.swift in Sources */,
 				DFAE84142B3C8BC80055EFB1 /* ContentView.swift in Sources */,
 				DF398AF72B434E0B00F4F2DB /* NotificationListView.swift in Sources */,

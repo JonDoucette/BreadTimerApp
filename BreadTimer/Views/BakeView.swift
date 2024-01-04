@@ -9,6 +9,8 @@ import SwiftUI
 
 struct BakeView: View {
     
+    @AppStorage("BufferTime") private var bufferTime = 0
+    
     @State private var baker = BreadHandler()
     @State private var pendingNotifications: [UNNotificationRequest] = []
 
@@ -33,6 +35,22 @@ struct BakeView: View {
                 self.pendingNotifications = requests
             }
         }
+    }
+    
+    func recalculateTotalTime(){
+        let calendar = Calendar.current
+        let bakeTime = baker.calculateTimeToBake()
+        
+        let integerHours = Int(bakeTime)
+        let fractionalHours = bakeTime - Float(integerHours)
+        let minutes = Int(fractionalHours * 60)
+        
+        var dateComponents = DateComponents()
+        dateComponents.hour = -integerHours
+        dateComponents.minute = -minutes
+        
+        let newDate = calendar.date(byAdding: dateComponents, to: baker.selectedDate)
+        baker.subtractedDate = newDate ?? Date()
     }
     
     let notify = NotificationHandler()
@@ -77,42 +95,15 @@ struct BakeView: View {
             .cornerRadius(12)
 
         }.onChange(of: baker.selectedDate, {oldValue, newValue in
-            if true {
-                let calendar = Calendar.current
-                let bakeTime = baker.calculateTimeToBake()
-                
-                let integerHours = Int(bakeTime)
-                let fractionalHours = bakeTime - Float(integerHours)
-                let minutes = Int(fractionalHours * 60)
-                
-                var dateComponents = DateComponents()
-                dateComponents.hour = -integerHours
-                dateComponents.minute = -minutes
-                
-                let newDate = calendar.date(byAdding: dateComponents, to: baker.selectedDate)
-                baker.subtractedDate = newDate ?? Date()
-            }
+            recalculateTotalTime()
         })
         .padding()
                 .onChange(of: baker.calculateTimeToBake(), { oldValue, newValue in
-                    if true {
-                        let calendar = Calendar.current
-                        let bakeTime = baker.calculateTimeToBake()
-                        
-                        let integerHours = Int(bakeTime)
-                        let fractionalHours = bakeTime - Float(integerHours)
-                        let minutes = Int(fractionalHours * 60)
-                        
-                        var dateComponents = DateComponents()
-                        dateComponents.hour = -integerHours
-                        dateComponents.minute = -minutes
-                        
-                        let newDate = calendar.date(byAdding: dateComponents, to: baker.selectedDate)
-                        baker.subtractedDate = newDate ?? Date()
-                    }
+                    recalculateTotalTime()
                 }
                 ).background(Color(red:252/255, green: 235/255, blue: 157/255))
-        }
+            .onChange(of: bufferTime, {oldValue, newValue in recalculateTotalTime()})
+    }
     }
 
     
