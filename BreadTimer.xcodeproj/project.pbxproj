@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF08A76A2B4658AF0014801B /* DefaultPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF08A7692B4658AF0014801B /* DefaultPreferenceView.swift */; };
+		DF08A76C2B465B2E0014801B /* WheelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF08A76B2B465B2E0014801B /* WheelPicker.swift */; };
 		DF398AF52B434DE000F4F2DB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF398AF42B434DE000F4F2DB /* SettingsView.swift */; };
 		DF398AF72B434E0B00F4F2DB /* NotificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF398AF62B434E0B00F4F2DB /* NotificationListView.swift */; };
 		DF398AF92B44D08100F4F2DB /* BakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF398AF82B44D08100F4F2DB /* BakeView.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DF08A7692B4658AF0014801B /* DefaultPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPreferenceView.swift; sourceTree = "<group>"; };
+		DF08A76B2B465B2E0014801B /* WheelPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelPicker.swift; sourceTree = "<group>"; };
 		DF398AF42B434DE000F4F2DB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DF398AF62B434E0B00F4F2DB /* NotificationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.swift; sourceTree = "<group>"; };
 		DF398AF82B44D08100F4F2DB /* BakeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BakeView.swift; sourceTree = "<group>"; };
@@ -87,6 +91,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF08A7672B46580D0014801B /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				DF398AF42B434DE000F4F2DB /* SettingsView.swift */,
+				DF398AF62B434E0B00F4F2DB /* NotificationListView.swift */,
+				DF398AFA2B46244E00F4F2DB /* BufferView.swift */,
+				DF08A7692B4658AF0014801B /* DefaultPreferenceView.swift */,
+				DF08A76B2B465B2E0014801B /* WheelPicker.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		DF08A7682B46582C0014801B /* Bake */ = {
+			isa = PBXGroup;
+			children = (
+				DF398AF82B44D08100F4F2DB /* BakeView.swift */,
+				DFAE84132B3C8BC80055EFB1 /* ContentView.swift */,
+				DFAE843F2B3DFE950055EFB1 /* BreadOptionView.swift */,
+			);
+			path = Bake;
+			sourceTree = "<group>";
+		};
 		DFAE84052B3C8BC80055EFB1 = {
 			isa = PBXGroup;
 			children = (
@@ -148,12 +174,8 @@
 		DFAE843B2B3C90630055EFB1 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				DF398AF82B44D08100F4F2DB /* BakeView.swift */,
-				DFAE84132B3C8BC80055EFB1 /* ContentView.swift */,
-				DFAE843F2B3DFE950055EFB1 /* BreadOptionView.swift */,
-				DF398AF42B434DE000F4F2DB /* SettingsView.swift */,
-				DF398AF62B434E0B00F4F2DB /* NotificationListView.swift */,
-				DF398AFA2B46244E00F4F2DB /* BufferView.swift */,
+				DF08A7682B46582C0014801B /* Bake */,
+				DF08A7672B46580D0014801B /* Settings */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -301,8 +323,10 @@
 				DF398AF52B434DE000F4F2DB /* SettingsView.swift in Sources */,
 				DF398AFB2B46244E00F4F2DB /* BufferView.swift in Sources */,
 				DFAE84462B3F4F460055EFB1 /* BreadHandler.swift in Sources */,
+				DF08A76A2B4658AF0014801B /* DefaultPreferenceView.swift in Sources */,
 				DFAE84142B3C8BC80055EFB1 /* ContentView.swift in Sources */,
 				DF398AF72B434E0B00F4F2DB /* NotificationListView.swift in Sources */,
+				DF08A76C2B465B2E0014801B /* WheelPicker.swift in Sources */,
 				DFAE843E2B3C907D0055EFB1 /* NotificationHandler.swift in Sources */,
 				DFAE84402B3DFE950055EFB1 /* BreadOptionView.swift in Sources */,
 				DFAE84122B3C8BC80055EFB1 /* BreadTimerApp.swift in Sources */,

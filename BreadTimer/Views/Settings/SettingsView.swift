@@ -42,7 +42,7 @@ struct SettingsView: View {
                             }
 
                             HStack{
-                                NavigationLink(destination: BufferView(number: $bufferTime), label: {
+                                NavigationLink(destination: DefaultPreferenceView(), label: {
                                     Text("Default Bake Times")
                                 })
                             }
