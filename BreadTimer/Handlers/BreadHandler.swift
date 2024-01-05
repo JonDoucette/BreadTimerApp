@@ -12,14 +12,15 @@ import Observation
 class BreadHandler {
 
     //Times
-    var stretchTime = 30
-    var stretchInterval = 1
-    var bulkTime: Double = 12.0
-    var proofTime: Double = 24.0
-    var ovenTime = 45
+    var stretchTime = UserDefaults.standard.integer(forKey: "StretchDefault")
+    var stretchInterval = UserDefaults.standard.integer(forKey: "IntervalDefault")
+    var bulkTime: Double = UserDefaults.standard.double(forKey: "BulkDefault")
+    var proofTime: Double = UserDefaults.standard.double(forKey: "ProofDefault")
+    var ovenTime = UserDefaults.standard.integer(forKey: "OvenDefault")
     var selectedDate = Date()
     var subtractedDate = Date()
-        
+    
+    
     func printValues(){
         print("Stretch Time: \(stretchTime)")
         print("Stretch Interval: \(stretchInterval)")

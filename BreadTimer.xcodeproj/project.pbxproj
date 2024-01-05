@@ -8,7 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		DF08A76A2B4658AF0014801B /* DefaultPreferenceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF08A7692B4658AF0014801B /* DefaultPreferenceView.swift */; };
-		DF08A76C2B465B2E0014801B /* WheelPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF08A76B2B465B2E0014801B /* WheelPicker.swift */; };
+		DF08A76C2B465B2E0014801B /* WheelPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF08A76B2B465B2E0014801B /* WheelPickerView.swift */; };
+		DF08A7702B4787520014801B /* DoublePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF08A76F2B4787520014801B /* DoublePickerView.swift */; };
 		DF398AF52B434DE000F4F2DB /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF398AF42B434DE000F4F2DB /* SettingsView.swift */; };
 		DF398AF72B434E0B00F4F2DB /* NotificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF398AF62B434E0B00F4F2DB /* NotificationListView.swift */; };
 		DF398AF92B44D08100F4F2DB /* BakeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF398AF82B44D08100F4F2DB /* BakeView.swift */; };
@@ -45,7 +46,8 @@
 
 /* Begin PBXFileReference section */
 		DF08A7692B4658AF0014801B /* DefaultPreferenceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultPreferenceView.swift; sourceTree = "<group>"; };
-		DF08A76B2B465B2E0014801B /* WheelPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelPicker.swift; sourceTree = "<group>"; };
+		DF08A76B2B465B2E0014801B /* WheelPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WheelPickerView.swift; sourceTree = "<group>"; };
+		DF08A76F2B4787520014801B /* DoublePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoublePickerView.swift; sourceTree = "<group>"; };
 		DF398AF42B434DE000F4F2DB /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		DF398AF62B434E0B00F4F2DB /* NotificationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.swift; sourceTree = "<group>"; };
 		DF398AF82B44D08100F4F2DB /* BakeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BakeView.swift; sourceTree = "<group>"; };
@@ -98,7 +100,8 @@
 				DF398AF62B434E0B00F4F2DB /* NotificationListView.swift */,
 				DF398AFA2B46244E00F4F2DB /* BufferView.swift */,
 				DF08A7692B4658AF0014801B /* DefaultPreferenceView.swift */,
-				DF08A76B2B465B2E0014801B /* WheelPicker.swift */,
+				DF08A76B2B465B2E0014801B /* WheelPickerView.swift */,
+				DF08A76F2B4787520014801B /* DoublePickerView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -326,11 +329,12 @@
 				DF08A76A2B4658AF0014801B /* DefaultPreferenceView.swift in Sources */,
 				DFAE84142B3C8BC80055EFB1 /* ContentView.swift in Sources */,
 				DF398AF72B434E0B00F4F2DB /* NotificationListView.swift in Sources */,
-				DF08A76C2B465B2E0014801B /* WheelPicker.swift in Sources */,
+				DF08A76C2B465B2E0014801B /* WheelPickerView.swift in Sources */,
 				DFAE843E2B3C907D0055EFB1 /* NotificationHandler.swift in Sources */,
 				DFAE84402B3DFE950055EFB1 /* BreadOptionView.swift in Sources */,
 				DFAE84122B3C8BC80055EFB1 /* BreadTimerApp.swift in Sources */,
 				DF398AF92B44D08100F4F2DB /* BakeView.swift in Sources */,
+				DF08A7702B4787520014801B /* DoublePickerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

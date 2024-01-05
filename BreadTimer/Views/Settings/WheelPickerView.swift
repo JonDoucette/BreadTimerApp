@@ -7,11 +7,12 @@
 
 import SwiftUI
 
-struct WheelPicker: View {
+struct WheelPickerView: View {
     @Environment(\.presentationMode) var presentationMode
     @Binding public var number: Int
     var title: String
     var description: String
+    var descriptor: String
     var min: Int
     var max: Int
     
@@ -19,13 +20,13 @@ struct WheelPicker: View {
         NavigationView {
             VStack {
                 Picker("Buffer Time", selection: $number) {
-                    ForEach(min...max, id: \.self) { number in
-                        Text("\(number)")
+                    ForEach(Array(min...max), id: \.self) { value in
+                        Text("\(value)")
                     }
                 }
                 .pickerStyle(.wheel)
                 .padding()
-                Text("\(number) minutes")
+                Text("\(number) \(descriptor)")
                 Text(description)
                     .italic()
                     .foregroundColor(.gray)
@@ -48,7 +49,7 @@ struct BindingViewExamplePreviewContainer_3: View {
     @State var number = 0
 
     var body: some View {
-        WheelPicker(number: $number, title: "Testing", description: "Default time used for Stretching and Folding", min: 50, max:100)
+        WheelPickerView(number: $number, title: "Testing", description: "Default time used for Stretching and Folding", descriptor: "minutes", min: 50, max:100)
     }
 }
 

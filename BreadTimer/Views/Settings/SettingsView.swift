@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("BufferTime") private var bufferTime = 5
     @State private var showSheet: Bool = false
+    private var accentColor: Color = Color(red:250/255, green: 178/255, blue: 77/255)
     
     @State private var pendingNotifications: [UNNotificationRequest] = []
     let notify = NotificationHandler()
@@ -22,6 +23,7 @@ struct SettingsView: View {
             }
         }
     }
+    
     
     var body: some View {
         NavigationView {
@@ -65,13 +67,12 @@ struct SettingsView: View {
                                     notify.clearNotifications()
                                 }.foregroundStyle(.blue)
                         })
-                        }
+                    }
                         .onAppear {
                             fetchPendingNotifications()
                         }
                     .navigationBarTitle("Settings")
-                }
-
+        }
         }
 }
 
