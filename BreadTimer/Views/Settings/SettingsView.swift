@@ -2,7 +2,7 @@
 //  SettingsView.swift
 //  BreadTimer
 //
-//  Created by Kelsey Maley on 1/1/24.
+//  Created by Jon Doucette on 1/1/24.
 //
 
 import SwiftUI
@@ -10,6 +10,7 @@ import SwiftUI
 struct SettingsView: View {
     @AppStorage("BufferTime") private var bufferTime = 5
     @State private var showSheet: Bool = false
+    @State private var notificationClearAlert: Bool = false
     private var accentColor: Color = Color(red:250/255, green: 178/255, blue: 77/255)
     
     @State private var pendingNotifications: [UNNotificationRequest] = []
@@ -56,16 +57,22 @@ struct SettingsView: View {
                             VStack {
                                 NavigationLink(destination: NotificationListView(pendingNotifications: pendingNotifications)) {
                                     Text("Show Notifications")
-                                        .padding()
-                                        .background(Color.blue)
-                                        .foregroundColor(.white)
-                                        .cornerRadius(8)
-                                }.padding()}
+                                }
+                            }
                             
                                 Button("Clear Notifications"){
-                                    print(bufferTime)
                                     notify.clearNotifications()
+                                    fetchPendingNotifications()
+                                    notificationClearAlert = true
                                 }.foregroundStyle(.blue)
+                                .alert("Notifications Cleared",
+                                                               isPresented: $notificationClearAlert, actions: {
+                                                           Button("Ok"){
+                                                               notificationClearAlert = false
+                                                           }
+                                                       }, message: {
+                                                           Text("Your notifications have been cleared")
+                                                       })
                         })
                     }
                         .onAppear {
@@ -73,6 +80,7 @@ struct SettingsView: View {
                         }
                     .navigationBarTitle("Settings")
         }
+        .navigationViewStyle(.stack)
         }
 }
 

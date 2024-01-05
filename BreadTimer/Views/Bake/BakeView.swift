@@ -13,12 +13,9 @@ struct BakeView: View {
     
     @State private var baker = BreadHandler()
     @State private var pendingNotifications: [UNNotificationRequest] = []
-
     
-    @State private var selectedDate = Date()
-    @State private var subtractedDate = Date()
-    @State var nothingField: Int = 0
-    
+    @State private var showingWarningAlert: Bool = false
+    @State private var showingConfirmationAlert: Bool = false
     
     @State private var accentColor: Color = Color(red:250/255, green: 178/255, blue: 77/255)
     
@@ -65,14 +62,16 @@ struct BakeView: View {
                     Image(systemName: "gobackward")
                         .font(.system(size: 20))
                 })
-                Spacer().frame(width: 60)
-                Text("Bread Timer")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
+                Spacer().frame(width: 70)
+
                 Spacer()
-                
-            }
+            }.overlay(Text("Bread Timer")
+                .font(.largeTitle)
+                .fontWeight(.bold), alignment: .top)
+            
+            
             BreadOptionView(baker: $baker)
+                .ignoresSafeArea()
             Spacer()
             HStack(){
                 Text("Total Time: ").fontWeight(.bold)
@@ -85,16 +84,11 @@ struct BakeView: View {
                 
             }
             
-            
-            Button("Schedule Notifications"){
-                baker.prepareNotifications(notify: notify)
-            }
-            .foregroundStyle(.white)
-            .frame(width: 200, height: 50)
-            .background(accentColor)
-            .cornerRadius(12)
+            ScheduleButtonView(baker: $baker, notify: notify)
 
-        }.onChange(of: baker.selectedDate, {oldValue, newValue in
+        }
+
+        .onChange(of: baker.selectedDate, {oldValue, newValue in
             recalculateTotalTime()
         })
         .padding()

@@ -10,21 +10,55 @@ import SwiftUI
 struct BreadOptionView: View {
 
     @Binding var baker: BreadHandler
+    @State private var currentDate: Date = Date()
+    @FocusState private var keyboardEnabled: Bool
 
     
     @State private var subtractedDate = Date()
-    
+    @State private var selectedDateComponents: DateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute, .second], from: Date())
+
     //Enums
     @State private var selectedCommonStretch: CommonStretch = .minute30
     @State private var selectedCommonBulk: CommonBulk = .hour12
     @State private var selectedCommonProof: CommonProof = .hour24
     @State private var selectedCommonOven: CommonOven = .minute45
+    @State private var selectedCommonTime: CommonDesiredTime = .noon
+
     
     @State private var accentColor: Color = Color(red:250/255, green: 178/255, blue: 77/255)
     
     
     var body: some View {
         ScrollView {
+            VStack{
+                HStack(){
+                    Text("Name")
+                        .padding(5)
+                    Spacer()
+                    TextField("Bread Name", text: $baker.name)
+                        .focused($keyboardEnabled)
+                        .textFieldStyle(.roundedBorder)
+                        .multilineTextAlignment(.center)
+                        .frame(width: 200, alignment: .trailing)
+                        .padding(.trailing, 15)
+                        .toolbar {
+                            ToolbarItemGroup(placement: .keyboard) {
+                                Spacer()
+                                Button(action: {
+                                    keyboardEnabled = false
+                                }, label: {
+                                    Text("Done")
+                                        .foregroundStyle(.blue)
+                                        .bold()
+                                        .frame(alignment: .trailing)
+                                })
+                            }
+                        }
+                }.padding(5)
+                    .background(accentColor)
+                    .cornerRadius(10)
+            }
+            Spacer()
             VStack(){
                 HStack(){
                     VStack(alignment: .leading){
@@ -112,9 +146,9 @@ struct BreadOptionView: View {
                                 baker.bulkTime += 0.5
                             }.foregroundStyle(.black)
                         }
-
+                        
                     }
-
+                    
                 }.padding(5)
                     .background(accentColor)
                     .cornerRadius(10)
@@ -171,20 +205,20 @@ struct BreadOptionView: View {
                         }
                     }
                 }
-                    .padding(5)
-                    .background(accentColor)
-                    .cornerRadius(10)
+                .padding(5)
+                .background(accentColor)
+                .cornerRadius(10)
                 Spacer()
                 Picker("Proof", selection: $selectedCommonProof){
                     ForEach(CommonProof.allCases, id: \.self) { bulk in
                         Text(bulk.rawValue).tag(bulk)
                     }
                 }
-                    .padding(5)
-                    .pickerStyle(SegmentedPickerStyle())
-                    .onChange(of: selectedCommonProof) { oldValue, newValue in
-                            baker.proofTime = Double(newValue.number)
-                    }
+                .padding(5)
+                .pickerStyle(SegmentedPickerStyle())
+                .onChange(of: selectedCommonProof) { oldValue, newValue in
+                    baker.proofTime = Double(newValue.number)
+                }
             }.padding(5)
                 .background(accentColor)
                 .cornerRadius(10)
@@ -232,7 +266,7 @@ struct BreadOptionView: View {
                 .background(accentColor)
                 .cornerRadius(10)
             DatePicker("Desired Completion: ", selection: $baker.selectedDate, in:Date()...)
-                .padding(5)
+                .padding(15)
                 .background(accentColor)
                 .cornerRadius(10)
         }

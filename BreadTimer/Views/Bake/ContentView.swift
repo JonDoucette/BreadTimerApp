@@ -27,6 +27,7 @@ struct ContentView: View {
                 .tabItem {
                     Label("Bake", systemImage: "oven")
                 }
+                .ignoresSafeArea(.keyboard, edges: .bottom)
 
             SettingsView()
                 .tabItem {

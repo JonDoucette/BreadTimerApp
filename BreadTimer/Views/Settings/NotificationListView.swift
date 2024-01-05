@@ -21,8 +21,8 @@ struct NotificationListView: View {
     var body: some View {
         List(pendingNotifications, id: \.identifier) { notification in
             VStack(alignment: .leading) {
-                Text("Title: \(notification.content.title)")
-                Text("Body: \(notification.content.body)")
+                Text("\(notification.content.title)")
+                Text("\(notification.content.body)")
                 if let trigger = notification.trigger as? UNCalendarNotificationTrigger {
                     let triggerDate = trigger.nextTriggerDate()
                     if let date = triggerDate {
@@ -34,7 +34,7 @@ struct NotificationListView: View {
                 
             }
         }
-        .navigationTitle("Pending Notifications")
+        .navigationTitle("Notifications")
     }
 }
 

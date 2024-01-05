@@ -66,3 +66,21 @@ enum CommonOven: String, CaseIterable {
         }
     }
 }
+
+enum CommonDesiredTime: String, CaseIterable {
+    
+    case morning = "Morning"
+    case noon = "Noon"
+    case night = "Evening"
+    
+    //Returns the hour of the day
+    var number: Int {
+        switch self {
+            case .morning: return 8
+            case .noon: return 12
+            case .night: return 5
+        }
+    }
+    
+    
+}
